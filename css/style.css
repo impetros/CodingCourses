@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+.header{
+  height: 100px;
+  background: black;
+  padding: 0 20px;
+  color: #fff;
+}
+.logo{
+  line-height: 100px;
+  float: left;
+  text-transform: uppercase;
+}
+span{
+  color:red;
+}
+.flex-container{
+  float: right;
+  line-height: 100px;
+}
+.flex-container a{
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: 0.4s;
+}
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.show-menu-btn{
+  float: right;
+}
+.show-menu-btn i{
+  line-height: 100px;
+}
+.flex-container a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: #f89900;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+.backgroundDiv{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  left: 0;
+  background-color: rgb(246, 178, 52);
+}
+
+.content{
+  padding: 0 20px;
+}
+.content img{
+  width: 100%;
+}
+.content p{
+  text-align: justify;
+}
+.top-left {
+  position: absolute;
+  top: 200px;
+  left: 40px;
+}
+
+h1{
+  color:white;
+  font-family: 'B612', sans-serif;
+}
+
+h2,h3,h4,h5,h6,p{
+  color: black;
+  font-family: 'B612', sans-serif;
+}
+
+.textBackground{
+  background-color: black;
+  opacity: 0.5;
+  width: 500px;
+  height: 500px;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 120%;
+}
+
+.centered p{
+    text-align: center;
+}
+.container{
+  height: 80%;
+  width: 70%;
+  position: fixed;
+  z-index: -1;
+  top: 55%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  left: 50%;
+  background-color:white;
+  border-radius: 10%;
+}
+.insideContainer{
+  margin:5%;
+  text-align: left;
+}
+@media screen and (max-width:800px) {
+  .show-menu-btn,.hide-menu-btn{
+    display: block;
+  }
+  .flex-container{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+  }
+  .flex-container a{
+    display: block;
+    padding: 20px;
+  }
+  .hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .flex-container{
+    right: 0;
+  }
+}

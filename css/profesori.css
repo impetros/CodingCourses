@@ -1,0 +1,22 @@
+.first{
+    clear: both;
+    width:42%; vertical-align:top;float:left;border-radius: 20%; margin:1%
+}
+
+.second{
+    width:42%; vertical-align:top;float:right;border-radius: 20%;margin:1%
+}
+
+p{
+    clear: both;
+}
+.first img{
+    width: 20%;
+}
+audio{
+    width: 70%;
+}
+li{
+    text-align: center;
+    list-style-position: inside;
+}

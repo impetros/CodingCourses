@@ -1,0 +1,93 @@
+{
+    "accounts":[
+        {
+            "id": 1,
+            "firstName": "Dumitrescu",
+            "lastName": "Vlad",
+            "email": "vlad@gmail.com",
+            "password": "12345678",
+            "courses":[
+                2,3
+            ]
+        },
+        {
+            "id": 2,
+            "firstName": "Popescu",
+            "lastName": "Ana",
+            "email": "ana@gmail.com",
+            "password": "12345678",
+            "courses":[
+                4
+            ]
+        },
+        {
+            "id": 3,
+            "firstName": "Ungureanu",
+            "lastName": "Cristian",
+            "email": "cristian@gmail.com",
+            "password": "12345678",
+            "courses":[
+                6,7
+            ]
+        }
+    ],
+    "courses": [
+        {
+            "id":1,
+            "nume": "HTML/CSS",
+            "nivel": "incepator",
+            "data": "10/12/2019",
+            "disponibil": 5,
+            "pret": 400
+        },
+        {
+            "id":2,
+            "nume": "HTML/CSS",
+            "nivel": "avansat",
+            "data": "29/11/2019",
+            "disponibil": 7,
+            "pret": 500
+        },
+        {
+            "id":3,
+            "nume": "Javascript",
+            "nivel": "incepator",
+            "data": "18/11/2019",
+            "disponibil": 1,
+            "pret": 450
+        }, 
+        {
+            "id":4,
+            "nume": "C++",
+            "nivel": "incepator",
+            "data": "13/12/2019",
+            "disponibil": 6,
+            "pret": 450
+        },
+        {
+            "id":5,
+            "nume": "C++",
+            "nivel": "avansat",
+            "data": "26/12/2019",
+            "disponibil": 3,
+            "pret": 650
+        },
+        {
+            "id":6,
+            "nume": "Java",
+            "nivel": "incepator",
+            "data": "02/12/2019",
+            "disponibil": 9,
+            "pret": 500
+        },
+        {
+            "id":7,
+            "nume": "C#",
+            "nivel": "avansat",
+            "data": "15/02/2020",
+            "disponibil": 18,
+            "pret": 750
+        }     
+    ]
+
+}
