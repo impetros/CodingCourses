@@ -44,14 +44,16 @@
           <h2>sau foloseste-ti contul cu <button onclick="location.href='cont.html'">Login</button></h2>
           <form action="#">
             <label for="nume">Nume</label>
-            <input type="text" id="nume" name="firstname" placeholder="Numele tau.." required>
+            <input type="text" id="nume" name="firstname" class="firstname" placeholder="Numele tau.." required>
+            <p><span class="firstnamemsg hidden">Introduceti un nume valid</span></p>
             <br>
             <label for="prenume">Prenume</label>
-            <input type="text" id="prenume" name="lastname" placeholder="Prenumele tau.." required>
+            <input type="text" id="prenume" name="lastname" class="lastname" placeholder="Prenumele tau.." required>
+            <p><span class="lastnamemsg hidden">Introduceti un prenume valid</span></p>
             <br>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Email-ul tau.." required>
-            <br>
+            <input type="text" id="email" name="email" class="email" placeholder="Email-ul tau.." required>
+            <p><span class="emailmsg hidden">Introduceti o adresa de email valida</span></p>
             <label for="curs">Curs</label>
             <select id="curs" name="curs">
               <option value="html/css(incepator)">HTML/CSS(incepator)</option>
@@ -62,6 +64,15 @@
               <option value="C#">C#(avansat)</option>
             </select>
             <br>
+            <label for="tombola">Tombola</label>
+            <select id="tombola" name="tombola">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <br>
             <label for="subject">Comentarii</label>
             <textarea id="subject" name="subject" placeholder="Comentarii legate de inscriere.."></textarea>
             <br>
@@ -70,6 +81,7 @@
           <br>
           <br>
           <br>
+          <p>Prin inscriere participati automat la tombola si puteti <strong>castiga 10% discount</strong>.</p>
           <p>Inscrierea consta in <span>minim 25%</span> din pretul cursului(se achita la primul curs).</p>
       </div>
   </div>

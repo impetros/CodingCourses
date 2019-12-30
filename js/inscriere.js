@@ -1,3 +1,6 @@
+let nameRegex = /^[a-z ,.'-]+$/i;
+let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 $( document ).ready(function() {
     document.getElementById("nume").addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -23,106 +26,64 @@ $( document ).ready(function() {
             document.getElementById("submit").click();
         }
     });
+
+    $('.firstname').on('keypress keydown keyup',function(){
+        if (!$(this).val().match(nameRegex)) {
+         // there is a mismatch, hence show the error message
+            $('.firstnamemsg').removeClass('hidden');
+            $('.firstnamemsg').show();
+        }
+      else{
+           // else, do not display message
+           $('.firstnamemsg').addClass('hidden');
+          }
+    });
+
+    $('.lastname').on('keypress keydown keyup',function(){
+        if (!$(this).val().match(nameRegex)) {
+         // there is a mismatch, hence show the error message
+            $('.lastnamemsg').removeClass('hidden');
+            $('.lastnamemsg').show();
+        }
+      else{
+           // else, do not display message
+           $('.lastnamemsg').addClass('hidden');
+          }
+    });
+
+    $('.email').on('keypress keydown keyup',function(){
+        if (!$(this).val().match(emailRegex)) {
+         // there is a mismatch, hence show the error message
+            $('.emailmsg').removeClass('hidden');
+            $('.emailmsg').show();
+        }
+      else{
+           // else, do not display message
+           $('.emailmsg').addClass('hidden');
+          }
+    });
 });
 
 function inscriere(){
-    //validare();
-    let account = {
-        "firstName": document.getElementById('nume').value,
-        "lastName": document.getElementById('prenume').value,
-        "email": document.getElementById('email').value,
-        "password": null,
-        "courses":[
-        ]
-    }
-    let root = "http://my-json-server.typicode.com/impetros/CodingCourses/accounts";
-    let relativeRoot = "db.json";
-    $.ajax ({
-        url: root,
-        dataType: "json",
-        method: 'GET',
-        success: function(response){ 
-            console.log(response);
-        },
-        error: function(request,errorType, errorMsg){
-            alert("Ajax Fehlfunktion:" + errorMsg);
-        },
-    });
-
-    $.ajax ({
-        url: root,
-        dataType: "json",
-        method: 'POST',
-        data: account,
-        success: function(response){ 
-            console.log(response);
-        },
-        error: function(request,errorType, errorMsg){
-            alert("Ajax Fehlfunktion:" + errorMsg);
-        },
-    });
-
-    fetch(root, {
-        method: 'POST',
-        body: JSON.stringify({
-            "firstName": document.getElementById('nume').value,
-            "lastName": document.getElementById('prenume').value,
-            "email": document.getElementById('email').value,
-            "password": null,
-            "courses":[
-            ]
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
+    if(validare()){
+        const tombola = document.getElementById('tombola').value;
+        if(parseInt(tombola) === Math.floor(Math.random() * 5)+1){
+            Swal.fire(
+                'Felicitari ai castigat 10% discount si te-ai inscris cu succes!',
+                'Vei primi un mail cu confirmarea in cel mai scurt timp!',
+                'success'
+            );
+        } else {
+            Swal.fire(
+                'Te-ai inscris cu succes!',
+                'Vei primi un mail cu confirmarea in cel mai scurt timp!',
+                'success'
+            );
         }
-      })
-      .then(response => response.json())
-      .then(json => console.log(json))
-    
+    }
 
-      fetch(root)
-      .then(response => response.json())
-      .then(json => console.log(json))
-
-    $.ajax (root, {
-        dataType: "json",
-        method: 'POST',
-        data: account1,
-        success: function(response){ 
-            console.log(response);
-        },
-        error: function(request,errorType, errorMsg){
-            alert("Ajax Fehlfunktion:" + errorMsg);
-        },
-    });
-
-    
-    $.ajax (root, {
-        dataType: "json",
-        method: 'POST',
-        body: account1,
-        success: function(response){ 
-            account1.id = response.id;
-            $.ajax (root, {
-                dataType: "json",
-                method: 'POST',
-                body: account1,
-                success: function(response){ 
-                    console.log(response);
-                },
-                error: function(request,errorType, errorMsg){
-                    alert("Ajax Fehlfunktion:" + errorMsg);
-                }});
-        },
-        error: function(request,errorType, errorMsg){
-            alert("Ajax Fehlfunktion:" + errorMsg);
-        },
-    });
-    
 }
 function validare() {
-    let nameRegex = /^[a-z ,.'-]+$/i;
-    let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const firstName = document.getElementById('nume').value;
     const lastName = document.getElementById('prenume').value;
     const email = document.getElementById('email').value;
@@ -132,26 +93,22 @@ function validare() {
             'Numele de familie nu este valid',
             'error'
         )
+        return false;
     } else if(!nameRegex.test(lastName)){
         Swal.fire(
             'Nu te-ai inscris cu succes!',
             'Prenumele nu este valid',
             'error'
         )
+        return false;
     } else if(!emailRegex.test(email)){
         Swal.fire(
             'Nu te-ai inscris cu succes!',
             'Emailul nu este valid',
             'error'
         )
-    } else {
-
-        Swal.fire(
-            'Te-ai inscris cu succes!',
-            'Vei primi un mail cu confirmarea in cel mai scurt timp!',
-            'success'
-        );
-        // location.reload();
+        return false;
     }
+    return true;
 
 }

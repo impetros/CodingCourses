@@ -7,32 +7,39 @@ input[type=text], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-  }
+}
   
-  .submit {
-    background-color: rgb(226, 57, 57);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  button {
-    background-color: rgb(55, 100, 224);
-    color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-.centered label {
-    display: inline-block;
-    width: 6em;
-    margin-right: .5em;
-    padding-top: 1.5em;
-  }
+.submit {
+  background-color: rgb(226, 57, 57);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button {
+  background-color: rgb(55, 100, 224);
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  textarea{
-    height: 200px;
-  }
+.centered label {
+  display: inline-block;
+  width: 6em;
+  margin-right: .5em;
+  padding-top: 1.5em;
+}
+
+textarea{
+  height: 200px;
+}
+
+.firstnamemsg .lastnamemsg .emailmsg{
+  color: red;
+}
+.hidden {
+   visibility:hidden;
+}

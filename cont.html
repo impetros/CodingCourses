@@ -39,8 +39,87 @@
 
   <div class="content backgroundDiv">
       <div class="centered container">
-          
+        <div id="loggedDiv">
+          <h2>Cont</h2>
+          <br>
+          <form action="#" id="loggedForm">
+            <label for="nume">Nume</label>
+            <input type="text" id="nume" name="firstname" class="firstname" placeholder="Numele tau.." readonly>
+            <br>
+            <label for="prenume">Prenume</label>
+            <input type="text" id="prenume" name="lastname" class="lastname" placeholder="Prenumele tau.." readonly>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" class="email" placeholder="Email-ul tau.." readonly>
+            <br>
+            <label for="curs">Cursuri la care esti inscris</label>
+            <select id="curs" name="curs">
+            </select>
+            <br>
+            <input id="logout" class="submit" type="button" value="Logout" onclick="logouts()">
+          </form>
       </div>
+      <div id="registerDiv" class="hidden">
+        <h2>Inregistrare</h2>
+          <form action="#">
+            <label for="nume">Nume</label>
+            <input type="text" id="registernume" name="firstname" class="firstname" placeholder="Numele tau..">
+            <br>
+            <label for="prenume">Prenume</label>
+            <input type="text" id="registerprenume" name="lastname" class="lastname" placeholder="Prenumele tau..">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="registeremail" name="email" class="email" placeholder="Email-ul tau..">
+            <br>
+            <label for="registerpassword">Parola</label>
+            <input type="password" id="registerpassword" name="registerpassword" class="registerpassword">
+            <br>
+            <label for="curs">Curs</label>
+            <select id="registercurs" name="curs">
+              <option value="-">-</option>
+              <option value="html/css(incepator)">HTML/CSS(incepator)</option>
+              <option value="html/css(avansat)">HTML/CSS(avansat)</option>
+              <option value="javascript(incepator)">Javascript(incepator)</option>
+              <option value="c++">C++(incepator)</option>
+              <option value="java">Java(incepator)</option>
+              <option value="C#">C#(avansat)</option> 
+            </select>
+            <br>
+            <p>Experienta in programare:</p>
+            <label for="start">Incepator</label>
+            <input type="range" id="start" name="volume" min="0" max="11">
+            <label for="start">Guru</label>
+            <br>
+            <br>
+            <p>E primul vostru curs la CoolCode?</p>
+            <input type="radio" name="primulCurs" value="da" checked="checked" onclick="stopInterval()"> Da<br>
+            <input type="radio" name="primulCurs" value="nu" onclick="alreadyAccount()"> Nu<br>
+            <br>
+            <p>De unde ai auzit de CoolCode</p>
+            <input type="checkbox" name="CoolCode" value="google"> Google<br>
+            <input type="checkbox" name="CoolCode" value="prieteni"> Prieteni<br>
+            <input type="checkbox" name="CoolCode" value="stiri"> Stiri<br>
+            <br>
+            <input id="submit" class="submit" type="button" value="Inregistrare" onclick="inregistrare()">
+            <button onclick="backToLogin()">Back</button>
+          </form>
+      </div>
+      <div id="loginDiv"> 
+        <form action="#">
+          <h2>Login</h2>
+          <br>
+          <label for="loginemail">Email</label>
+          <input type="text" id="loginemail" name="loginemail" class="loginemail">
+          <br>
+          <label for="loginpassword">Password</label>
+          <input type="password" id="loginpassword" name="loginpassword" class="loginpassword">
+          <br>
+          <input id="login" class="submit" type="button" value="Login" onclick="logins()">
+          <button onclick="registers()">Register</button>
+        </form>
+      </div>
+
+    </div>
   </div>
   </body>
 </html>
